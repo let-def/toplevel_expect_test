@@ -510,9 +510,10 @@ let main fname =
 let args =
   Arg.align
     [ "-no-color", Clear use_color, " Produce colored diffs"
-    ; "-in-place", Set in_place,    " Overwirte file in place"
+    ; "-in-place", Set in_place,    " Overwrite file in place"
     ; "-diff-cmd", String (fun s -> diff_command := Some s), " Diff command"
     ; "-sexp"    , Set sexp_output, " Output the result as a s-expression instead of diffing"
+    ; "-verbose"    , Set verbose, " Include outcome of phrase evaluation (like ocaml toplevel)"
     ]
 
 let main () =
